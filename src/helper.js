@@ -1,3 +1,5 @@
+import todosData from './data/todos.json';
+
 export function getTodayDate() {
   let date = new Date();
   let dateArr = date.toString().split(' ');
@@ -24,4 +26,8 @@ export function dateIsEqual(a, b) {
   if (a.day == b.day && a.date == b.date && a.month == b.month) return true;
 
   return false;
+}
+
+export function getTodos(date) {
+  return todosData[`${date.date}-${date.month}`];
 }

@@ -1,9 +1,14 @@
+<script>
+  export let title;
+  export let done;
+</script>
+
 <div class="todo-item">
   <div class="todo-checkbox">
-    <input type="checkbox" name="done" />
+    <input type="checkbox" name="done" checked={done} />
   </div>
   <div class="desc">
-    <p class="title">Lorem ipsum dolor sit amet.</p>
+    <p class="title">{title}</p>
   </div>
 </div>
 

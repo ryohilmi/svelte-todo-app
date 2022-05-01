@@ -20,6 +20,7 @@
   @use '../style/variables' as v;
 
   .day {
+    width: 3.5rem;
     background: white;
     padding: 0.5rem 0.9rem;
     margin: 1rem;

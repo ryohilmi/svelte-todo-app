@@ -1,0 +1,12 @@
+{
+  "1-May": [
+    { "title": "Mandiin kucing", "done": false },
+    { "title": "Ngasih makan kucing", "done": false },
+    { "title": "Cebokin kucing", "done": false }
+  ],
+  "2-May": [
+    { "title": "Mandiin anjing", "done": true },
+    { "title": "Ngasih makan anjing", "done": false },
+    { "title": "Cebokin anjing", "done": false }
+  ]
+}
