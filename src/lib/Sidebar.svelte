@@ -6,8 +6,10 @@
 </div>
 
 <style lang="scss">
+  @use '../style/variables' as v;
+
   .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: white;
@@ -22,7 +24,7 @@
       font-weight: 600;
 
       span {
-        color: #4042c9;
+        color: v.$main-blue;
       }
     }
   }
