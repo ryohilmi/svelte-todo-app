@@ -1,14 +1,28 @@
 <script>
+  import '../helper';
+  import { dateIsEqual, getDateFromToday, getTodayDate } from '../helper';
   import Day from './Day.svelte';
   import TodoItem from './TodoItem.svelte';
 
-  let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  let selectedDate = getTodayDate();
+
+  let days = Array.from({ length: 8 }).map((_, i) => {
+    return getDateFromToday(i);
+  });
+
+  function selectDate(e) {
+    selectedDate = e.detail;
+  }
 </script>
 
 <div class="todo">
   <div class="days">
-    {#each Array(8) as _, i}
-      <Day selected={i == 1} date={(i % 30) + 5} day={days[i % 7]} />
+    {#each days as day, i}
+      <Day
+        selected={dateIsEqual(selectedDate, day)}
+        {day}
+        on:select={selectDate}
+      />
     {/each}
   </div>
   <h2>Tasks</h2>

@@ -1,12 +1,19 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
+  function handleSelect() {
+    dispatch('select', day);
+  }
+
   export let selected = false;
   export let day;
-  export let date;
 </script>
 
-<div class="day" class:selected>
-  <p>{date}</p>
-  <p>{day}</p>
+<div class="day" class:selected on:click={handleSelect}>
+  <p>{day.date}</p>
+  <p>{day.day}</p>
 </div>
 
 <style lang="scss">
@@ -19,6 +26,12 @@
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(141, 141, 141, 0.1);
+    user-select: none;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
 
     &.selected {
       background: v.$main-blue;
