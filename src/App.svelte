@@ -1,9 +1,11 @@
 <script>
   import Sidebar from './lib/Sidebar.svelte';
+  import Todos from './lib/Todos.svelte';
 </script>
 
 <main>
   <Sidebar />
+  <Todos />
 </main>
 
 <style>
