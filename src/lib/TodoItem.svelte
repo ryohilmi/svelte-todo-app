@@ -23,6 +23,12 @@
     display: flex;
     align-items: center;
     box-shadow: 0 0 10px rgba(102, 102, 102, 0.05);
+    transition: 0.2s all ease-out;
+
+    &:hover {
+      transform: scale(1.02);
+      transition: 0.2s all ease-out;
+    }
 
     .todo-checkbox {
       border-right: 1px solid rgb(204, 203, 203);
