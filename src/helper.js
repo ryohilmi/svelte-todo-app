@@ -41,3 +41,14 @@ export function getTodo(date) {
   let todos = getTodos();
   return todos[`${date.date}-${date.month}`];
 }
+
+export function markTodo(date, title, done) {
+  let todos = getTodos();
+
+  todos[`${date.date}-${date.month}`].find((todo) => {
+    if (todo.title == title) {
+      todo.done = done;
+    }
+  });
+  localStorage.setItem('sveltdo', JSON.stringify(todos));
+}

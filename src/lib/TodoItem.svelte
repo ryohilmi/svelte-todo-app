@@ -1,11 +1,16 @@
 <script>
+  import { markTodo } from '../helper';
+
   export let title;
   export let done;
+  export let date;
+
+  $: markTodo(date, title, done);
 </script>
 
 <div class="todo-item">
   <div class="todo-checkbox">
-    <input type="checkbox" name="done" checked={done} />
+    <input type="checkbox" name="done" bind:checked={done} />
   </div>
   <div class="desc">
     <p class="title">{title}</p>

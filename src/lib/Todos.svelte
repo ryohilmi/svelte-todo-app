@@ -22,7 +22,6 @@
 
   $: {
     todos = getTodo(selectedDate) || [];
-    console.log(todos);
   }
 </script>
 
@@ -39,7 +38,7 @@
   <h2>Tasks</h2>
   {#if todos.length > 0}
     {#each todos as todo (todo)}
-      <TodoItem title={todo.title} done={todo.done} />
+      <TodoItem title={todo.title} done={todo.done} date={selectedDate} />
     {/each}
   {:else}
     <h3 class="empty">Looks like you don't know what to do this day :'(</h3>
