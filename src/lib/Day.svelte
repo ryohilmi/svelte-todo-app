@@ -29,6 +29,12 @@
     box-shadow: 0 0 5px rgba(141, 141, 141, 0.1);
     user-select: none;
     cursor: pointer;
+    transition: 0.2s all ease-out;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.2s all ease-out;
+    }
 
     &:nth-child(1) {
       margin-left: 0;

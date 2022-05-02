@@ -2,7 +2,9 @@
 </script>
 
 <div class="sidebar">
-  <h1>Svelt<span>Do</span></h1>
+  <div class="sveltdo">
+    <h1>Svelt<span>Do</span></h1>
+  </div>
 </div>
 
 <style lang="scss">
@@ -18,13 +20,17 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(102, 102, 102, 0.1);
 
-    h1 {
-      margin: 3rem auto;
-      text-align: center;
-      font-weight: 600;
+    .sveltdo {
+      user-select: none;
 
-      span {
-        color: v.$main-blue;
+      h1 {
+        margin: 3rem auto;
+        text-align: center;
+        font-weight: 600;
+
+        span {
+          color: v.$main-blue;
+        }
       }
     }
   }
