@@ -28,6 +28,16 @@ export function dateIsEqual(a, b) {
   return false;
 }
 
-export function getTodos(date) {
-  return todosData[`${date.date}-${date.month}`];
+export function getTodos() {
+  if (!localStorage.getItem('sveltdo')) {
+    localStorage.setItem('sveltdo', JSON.stringify(todosData));
+    return todosData;
+  } else {
+    return JSON.parse(localStorage.getItem('sveltdo'));
+  }
+}
+
+export function getTodo(date) {
+  let todos = getTodos();
+  return todos[`${date.date}-${date.month}`];
 }

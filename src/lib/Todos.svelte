@@ -3,15 +3,15 @@
     dateIsEqual,
     getDateFromToday,
     getTodayDate,
-    getTodos,
+    getTodo,
   } from '../helper';
   import Day from './Day.svelte';
   import TodoItem from './TodoItem.svelte';
 
   let selectedDate = getTodayDate();
 
-  let days = Array.from({ length: 8 }).map((_, i) => {
-    return getDateFromToday(i);
+  let days = Array.from({ length: 10 }).map((_, i) => {
+    return getDateFromToday(i - 2);
   });
 
   let todos = [];
@@ -21,7 +21,7 @@
   }
 
   $: {
-    todos = getTodos(selectedDate) || [];
+    todos = getTodo(selectedDate) || [];
     console.log(todos);
   }
 </script>
