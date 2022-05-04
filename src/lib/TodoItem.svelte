@@ -1,5 +1,6 @@
 <script>
   import { markTodo } from '../helper';
+  import { slide } from 'svelte/transition';
 
   export let title;
   export let done;
@@ -8,7 +9,7 @@
   $: markTodo(date, title, done);
 </script>
 
-<div class="todo-item">
+<div class="todo-item" in:slide={{ duration: 500, delay: 10 }}>
   <div class="todo-checkbox">
     <input type="checkbox" name="done" bind:checked={done} />
   </div>
